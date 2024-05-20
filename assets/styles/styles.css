@@ -1,0 +1,107 @@
+@font-face {
+    font-family: roboto;
+    src: url(../../fonts/Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: roboto-bold;
+    src: url(../../fonts/Roboto/Roboto-bold.ttf);
+}
+@font-face {
+    font-family: roboto-thin;
+    src: url(../../fonts/Roboto/Roboto-Thin.ttf);
+}
+/* General */
+html, body{
+    font-family: roboto, sans-serif !important;
+}
+p{
+    font-family: roboto-thin, sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: roboto-bold, sans-serif !important;
+    font-weight: 900 !important;
+}
+a{
+    text-decoration: none !important;
+}
+.courses{
+    font-family: roboto-thin, sans-serif !important;
+}
+.about p{
+    font-size: 1.175rem !important;
+}
+.card p {
+    font-size: 1.175rem !important;
+}
+.taught p{
+    font-size: 1.175rem !important;
+}
+.roboto-thin{
+    font-family: roboto-thin, sans-serif !important;
+    font-size: 1.175rem !important;
+}
+.large-icon{
+    font-size: 4rem !important;
+}
+nav .nav-link{
+    font-family: roboto-thin, sans-serif !important;
+    font-size: 1.175em !important;
+}
+.gradient-background-primary{
+    background: linear-gradient(90deg, rgba(0,74,173,1) 0%, rgba(9,73,121,1) 35%, rgba(98,0,84,1) 100%);
+}
+.gradient-background-secondary{
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(243,202,255,1) 49%, rgba(255,255,255,1) 100%);
+}
+.google-red{
+    background: #ea4335 !important;
+}
+table > :not(caption) > * > * {
+    background: transparent !important;
+    border-bottom-width: 0px !important;
+}
+.btn-close{
+    color: #fff !important;
+}
+.card{
+    border-style: none !important;
+}
+.social-media-circle{
+    position: relative;
+    padding: 1px 5px;
+    border-radius: 50%;
+    font-size: 0.7em;
+    background: #0CC0DF;
+    color: #fff;
+    text-align: center;
+    margin-left: -8px;
+    top: -5px;
+}
+/* Navigation */
+@media (max-width: 992px) {
+    .cart-number{
+        top: 100px;
+        right: auto;
+    }
+}
+.cart-number{
+    position: relative;
+    padding: 1px 5px;
+    border-radius: 50%;
+    font-size: 0.7em;
+    background: #0CC0DF;
+    color: #fff;
+    text-align: center;
+    margin-left: -8px;
+    top: -5px;
+}
+nav .nav-link{
+    color: #fff !important;
+}
+nav .nav-link:hover{
+    color: #0CC0DF !important;
+}
+/* Footer */
+footer .nav-link{
+    color: #fff !important;
+}
