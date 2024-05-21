@@ -9,17 +9,21 @@ const TaughtHome = () => {
                 <div className="mb-3">
                     <h2>What is taught?</h2>        
                 </div>
-                <div className="col-md-3 mb-2">
-                    <FaHtml5 className="large-icon me-3" />HTML & CSS
+                <div className="col-md-3 mb-2 text-center">
+                    <FaHtml5 className="large-icon" /><br />
+                    <div className="fs-4 mt-1">HTML & CSS</div>
+                </div>
+                <div className="col-md-3 mb-2 text-center">
+                    <IoLogoJavascript className="large-icon" /><br />
+                    <div className="fs-4 mt-1">Javascript</div>
                 </div>
                 <div className="col-md-3 mb-2">
-                    <IoLogoJavascript className="large-icon me-3" />Javascript
+                    <FaPython className="large-icon" /><br />
+                    <div className="fs-4 mt-1">Python</div>
                 </div>
                 <div className="col-md-3 mb-2">
-                    <FaPython className="large-icon me-3" />Python
-                </div>
-                <div className="col-md-3 mb-2">
-                    <SiMinecraft className="large-icon me-3" />Coding in Minecraft
+                    <SiMinecraft className="large-icon-minecraft" />
+                    <div className="fs-4 mt-1">Coding in Minecraft</div>
                 </div>
                 <div className="mt-3">
                     <p>From <span className="fw-bolder">websites</span> to <b>game development,</b> here at 8 Bit Cafe, we learn some some of the latest technology that the industry uses. </p>

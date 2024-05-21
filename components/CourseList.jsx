@@ -11,10 +11,10 @@ const Courses = () => {
           <div className="mb-1">
             <div className="row">
               <div className="col-md-8">
-                <div className="justify-content-start"><Link className="text-white roboto-thin" href="/">Javascript 101</Link></div>
+                <div className="justify-content-start"><Link className="text-white" href="/">Javascript 101</Link></div>
               </div>
               <div className="col-md-4">
-                <div className="float-end"><Link className="text-white roboto-thin" href="/">Register</Link></div>
+                <div className="float-end"><Link className="text-white" href="/">Register</Link></div>
               </div>
             </div>
             
@@ -22,10 +22,10 @@ const Courses = () => {
           <div className="mb-1">
             <div className="row">
               <div className="col-md-8">
-                <div className="justify-content-start"><Link className="text-white roboto-thin" href="/">Minecraft: Coding Fundamentals</Link></div>
+                <div className="justify-content-start"><Link className="text-white" href="/">Minecraft: Coding Fundamentals</Link></div>
               </div>
               <div className="col-md-4">
-                <div className="float-end"><Link className="text-white roboto-thin" href="/">Register</Link></div>
+                <div className="float-end"><Link className="text-white" href="/">Register</Link></div>
               </div>
             </div>
             
@@ -33,10 +33,10 @@ const Courses = () => {
          <div className="mb-1">
             <div className="row">
               <div className="col-md-8">
-                <div className="justify-content-start"><Link className="text-white roboto-thin" href="/">Python Game Development</Link></div>
+                <div className="justify-content-start"><Link className="text-white" href="/">Python Game Development</Link></div>
               </div>
               <div className="col-md-4">
-                <div className="float-end"><Link className="text-white roboto-thin" href="/">Register</Link></div>
+                <div className="float-end"><Link className="text-white" href="/">Register</Link></div>
               </div>
             </div>
             

@@ -14,9 +14,7 @@
 html, body{
     font-family: roboto, sans-serif !important;
 }
-p{
-    font-family: roboto-thin, sans-serif !important;
-}
+
 h1, h2, h3, h4, h5, h6{
     font-family: roboto-bold, sans-serif !important;
     font-weight: 900 !important;
@@ -43,8 +41,10 @@ a{
 .large-icon{
     font-size: 4rem !important;
 }
+.large-icon-minecraft{
+    font-size: 6rem !important;
+}
 nav .nav-link{
-    font-family: roboto-thin, sans-serif !important;
     font-size: 1.175em !important;
 }
 .gradient-background-primary{
@@ -52,6 +52,12 @@ nav .nav-link{
 }
 .gradient-background-secondary{
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(243,202,255,1) 49%, rgba(255,255,255,1) 100%);
+}
+.breadcrumb-link{
+    font-size: 1.175rem !important;
+}
+.about p{
+    text-indent: 50px;
 }
 .google-red{
     background: #ea4335 !important;

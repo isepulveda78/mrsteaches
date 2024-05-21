@@ -5,7 +5,7 @@ import { BsPerson } from "react-icons/bs"
 const CourseCard = ({image}) => {
   return (
     <div className="container">
-        <div className="card shadow-lg mb-2">
+        <div className="card shadow-lg mb-5">
         <Image src={minecraft} className="card-img-top img-fluid" alt="..." />
         <div className="card-body">
             <h5 className="card-title text-center">Card title</h5>
