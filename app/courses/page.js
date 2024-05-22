@@ -6,7 +6,6 @@ const Courses = () => {
     <div className="container">
         <div className="mt-3">
             <Breadcrumb page={'Courses'} />
-            <h2 className="my-3 text-center">Courses</h2>
             <div className="row">
                 <div className="col-lg-3 col-md-0">
                     <div class="nav flex-column navbar-dark mb-5">
@@ -62,6 +61,7 @@ const Courses = () => {
                 </div>
             
                     <div className="col-lg-9">
+                        <h2 className="mb-5 text-center">Courses</h2>
                       <div className="row">
                       <div className="col-md-6">
                             <CourseCard />

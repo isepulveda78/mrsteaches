@@ -59,6 +59,10 @@ nav .nav-link{
 .about p{
     text-indent: 50px;
 }
+.course-info p{
+    text-indent: 50px;
+    line-height: 25px;
+}
 .google-red{
     background: #ea4335 !important;
 }

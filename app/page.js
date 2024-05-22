@@ -12,10 +12,13 @@ export default function Home() {
           <AboutHome />
         </section>
         <section className="gradient-background-primary">
-          <CoursesHome />
+            <div className="pt-3">
+              <h2 className="text-white mb-3 text-center">Courses</h2>
+                 <CoursesHome />
+            </div>
         </section>
         <section className="gradient-background-secondary">
-          <TaughtHome />
+          <TaughtHome className="" />
         </section>
     </main>
   );
