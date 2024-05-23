@@ -2,6 +2,7 @@ import CourseImage from "@/components/CourseImage"
 import CourseInfo from "@/components/CourseInfo"
 import Breadcrumb from "@/components/Breadcrumb"
 import CoursesHome from "@/components/CoursesHome"
+import Link from "next/link"
 const Course = () => {
   return (
     <div className="container">
@@ -17,7 +18,7 @@ const Course = () => {
                     <CourseImage />
                     <div className="mt-3 d-grid gap-2">
                         <button className="btn btn-danger btn-lg text-white">Enroll</button>
-                        <button className="btn btn-info btn-lg text-white" type="button">Classroom</button>
+                        <Link className="btn btn-info btn-lg text-white" href="/classroom">Classroom</Link>
                     </div>
                </div>
             </div>

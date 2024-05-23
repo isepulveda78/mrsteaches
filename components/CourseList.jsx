@@ -5,7 +5,7 @@ const Courses = () => {
   return (
     <div className="my-5 course-list">
         <div className="text-center">
-        <h2 className="text-white">Courses</h2>
+        <div className="display-6 lead text-white">Courses</div>
         </div>
         <div className="course-list mt-5">
           <div className="mb-1">
