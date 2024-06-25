@@ -1,41 +1,38 @@
-@font-face {
-    font-family: roboto;
-    src: url(../../fonts/Roboto/Roboto-Regular.ttf);
-}
-@font-face {
-    font-family: roboto-bold;
-    src: url(../../fonts/Roboto/Roboto-bold.ttf);
-}
-@font-face {
-    font-family: roboto-thin;
-    src: url(../../fonts/Roboto/Roboto-Thin.ttf);
-}
+
 /* General */
 html, body{
-    font-family: roboto, sans-serif !important;
+    height: 100% !important;
+    margin: 0;
+    overflow-x: hidden;
 }
-
-h1, h2, h3, h4, h5, h6{
-    font-family: roboto-bold, sans-serif !important;
-    font-weight: 900 !important;
+body {
+    display: flex !important;
+    flex-direction: column !important;
+}
+.wrapper{
+    flex: 1 0 auto !important;
 }
 a{
     text-decoration: none !important;
 }
-.courses{
-    font-family: roboto-thin, sans-serif !important;
+/* About Home **/
+.about-home{
+    margin: -25px 0 0 0;
 }
+/* Card */
 .about p{
     font-size: 1.175rem !important;
 }
 .card p {
     font-size: 1.175rem !important;
 }
-.taught p{
-    font-size: 1.175rem !important;
+.home-title-margin{
+    margin: -50px 0 25px 0;
 }
-.roboto-thin{
-    font-family: roboto-thin, sans-serif !important;
+.page-section{
+  padding: 6rem 0 2rem 0 !important;
+}
+.taught p{
     font-size: 1.175rem !important;
 }
 .large-icon{
@@ -46,12 +43,6 @@ a{
 }
 nav .nav-link{
     font-size: 1.175em !important;
-}
-.gradient-background-primary{
-    background: linear-gradient(90deg, rgba(0,74,173,1) 0%, rgba(9,73,121,1) 35%, rgba(98,0,84,1) 100%);
-}
-.gradient-background-secondary{
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(243,202,255,1) 49%, rgba(255,255,255,1) 100%);
 }
 .breadcrumb-link{
     font-size: 1.175rem !important;
@@ -109,9 +100,10 @@ nav .nav-link{
     color: #fff !important;
 }
 nav .nav-link:hover{
-    color: #0CC0DF !important;
+    color: #dbdc1f !important;
 }
 /* Footer */
 footer .nav-link{
     color: #fff !important;
+    flex-shrink: 0;
 }

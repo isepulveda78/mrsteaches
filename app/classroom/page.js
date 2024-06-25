@@ -2,16 +2,14 @@ import Image from "next/image"
 import Link from "next/link"
 import screenshot from "@/assets/images/screenshot.png"
 import Breadcrumb from "@/components/Breadcrumb"
-const classNameroom = () => {
+
+const Subjects = () => {
   return (
-    <section>
-    <div className="container">
-        <div className="my-3">
+    <div className="container page-section">
         <Breadcrumb page={"Minecraft"}/>
-        </div>
         <div className="col-lg-12">
            <div className="card shadow p-2 mb-3">
-           <Image src={screenshot} width={2560} height={1600} priority={true} className="img-fluid" />
+           <Image src={screenshot} width={2560} height={1600} priority={true} alt="..." className="img-fluid" />
            </div>
         </div>
         <div className="col-lg-12 mb-3">
@@ -58,8 +56,7 @@ const classNameroom = () => {
         </div>
         </div>
     </div>
-</section>
   )
 }
 
-export default classNameroom
+export default Subjects

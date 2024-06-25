@@ -1,65 +1,23 @@
-import logo from "@/assets/images/logo.png"
-import Image from "next/image"
-import { FaFacebook, FaYoutube, FaDiscord, FaRegCopyright } from "react-icons/fa";
-import Link from "next/link";
-
+import Link from "next/link"
+import { FaFacebookF, FaGithub, FaYoutube } from "react-icons/fa"
 const Footer = () => {
-    const currentYear = new Date().getFullYear()
   return (
-    <>
-        <footer className="container p-3">
-            <div className="row text-center">
-                <div className="col-md-4 col-sm-12">
-                    <Image src={logo} width={224} height={47} alt="8 Bit Cafe" className="mb-2" priority={true} />
-                    <div className="mt-1 text-white">
-                        Thanks for stopping by. If you need anything, feel free to email us at eightbit@eightbitcafe.com.
-                    </div>
-                </div>
-                <div className="col-md-4 col-sm-12">
-                        <ul className="nav flex-column">
-                            <li className="nav-item">
-                                <div className="h5 text-white">Menu</div>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#">About</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#">Services</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#">Courses</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#">Terms</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#">Privacy</Link>
-                            </li>
-                        </ul>
-                </div>
-                <div className="col-md-4 col-sm-12">
-                        <ul className="nav flex-column">
-                            <li className="nav-item">
-                                <div className="h5 text-white">Around the Web</div>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#"><FaFacebook className="text-white me-3" />
-Facebook</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#"><FaYoutube className="text-white me-3" />YouTube</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" href="#"><FaDiscord className="text-white me-3" />Discord</Link>
-                            </li>
-                        </ul>
-                </div>
-            </div>
-        </footer>
-        <div className="gradient-background-secondary text-center p-2">
-            8 Bit Cafe <FaRegCopyright /> { currentYear }
-        </div>
-        </>
+    <footer className="p-4 footer shadow bg-primary">
+      <div className="container">
+              <div className="row align-items-center">
+                  <div className="col-lg-4 text-lg-start link-light fw-bold">Copyright  Your Website 2023</div>
+                  <div className="col-lg-4 my-3 my-lg-0">
+                      <Link className="btn btn-light btn-social text-dark mx-2" href="#!" aria-label="Twitter"><FaFacebookF /></Link>
+                      <Link className="btn btn-light btn-social text-dark mx-2" href="#!" aria-label="Facebook"><FaGithub /></Link>
+                      <Link className="btn btn-light btn-social text-dark mx-2" href="#!" aria-label="LinkedIn"><FaYoutube /></Link>
+                  </div>
+                  <div className="col-lg-4 text-lg-end">
+                      <Link className="text-decoration-none me-3 link-light fw-bold" href="#!">Privacy Policy</Link>
+                      <Link className="text-decoration-none link-light fw-bold" href="#!">Terms of Use</Link>
+                  </div>
+              </div>
+      </div>
+    </footer>
   )
 }
 

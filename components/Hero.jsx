@@ -1,16 +1,15 @@
-import Image from "next/image"
 import Carousel from "./Carousel"
-import CourseList from "./CourseList"
+import LearnMore from "./LearnMore"
 
 const Hero = () => {
   return (
         <div className="container">
             <div className="row">
-                <div className="col-md-7 col-sm-12">
+                <div className="col-lg-8 col-md-8 col-sm-12">
                     <Carousel />
                 </div>
-                <div className="col-md-5 col-sm-12">
-                    <CourseList />
+                <div className="col-lg-4 col-md-4 col-sm-12 ">
+                    <LearnMore />        
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@ import CoursesHome from "@/components/CoursesHome"
 import Link from "next/link"
 const Course = () => {
   return (
-    <div className="container">
+    <div className="container page-section">
         <div className="row">
             <div className="my-3">
                 <Breadcrumb page={'Courses'} />
