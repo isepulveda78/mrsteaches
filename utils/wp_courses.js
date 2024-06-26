@@ -6,7 +6,7 @@ const httpsAgent = new https.Agent({
 })
 
 export async function getCourses(){
-    const res = await fetch('https://71f.036.myftpupload.com/wp-json/courses/v1/courses', {
+    const res = await fetch('https://israels14.sg-host.com/wp-json/courses/v1/courses', {
         agent: httpsAgent
     })
     const courses = await res.json()

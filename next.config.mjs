@@ -14,7 +14,7 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'epr.xea.temporary.site',
+                hostname: 'israels14.sg-host.com',
                 pathname: '**'
             },
         ],
