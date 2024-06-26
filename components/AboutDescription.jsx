@@ -2,7 +2,7 @@ import { LuCheckCircle } from "react-icons/lu";
 
 const AboutDescription = () => {
   return (
-        <div className='container'>
+        <div className="container">
               <div className="row">
                 <div className="col-md-10 offset-md-1 about">
                     <div className="text-start">
