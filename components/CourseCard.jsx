@@ -1,28 +1,29 @@
 import Image from "next/image"
-import minecraft from '@/assets/images/minecraft.webp'
 import { BsPerson } from "react-icons/bs"
 import Link from "next/link"
 
-
-const CourseCard = ({image}) => {
+const CourseCard = ({post}) => {
+   
   return (
+    <div className="col-md-4 col-sm-12">
     <div className="container">
         <div className="card shadow-lg mb-3">
-        <Link href="/subjects/subject"><Image src={minecraft} className="card-img-top img-fluid" alt="..." /></Link>
+        <Link href="/subjects/subject"><Image src={post.featured_image_url} width={638} height={353} priority={true} className="card-img-top img-fluid" alt={post.title} /></Link>
         <div className="card-body">
-            <Link href="/courses/body"><h5 className="card-title text-center">Card title</h5></Link>
-            <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <Link href="/courses/body"><h5 className="card-title text-center">{post.title}</h5></Link>
+            <p className="card-text">{post.excerpt}</p>
             <hr />
             <div className="row">
                 <div className="col text-start">
-                    <BsPerson className="text-danger mb-1"/> <span className="text-danger">8 +</span>
+                    <BsPerson className="text-danger mb-1"/> <span className="text-danger">{post.level}</span>
                 </div>
                 <div className="col text-end text-danger">
-                    $ 125
+                    ${post.price}
                 </div>
             </div>
         </div>
         </div>
+    </div>
     </div>
   )
 }
