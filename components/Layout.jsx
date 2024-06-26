@@ -1,5 +1,3 @@
-import '@/assets/styles/global.css'
-import '@/assets/styles/styles.css'
 import Script from "next/script"
 import Head from 'next/head'
 
