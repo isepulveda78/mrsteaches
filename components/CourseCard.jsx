@@ -3,7 +3,10 @@ import { BsPerson } from "react-icons/bs"
 import Link from "next/link"
 
 const CourseCard = ({post}) => {
-   
+   if(!post){
+    return 'loading...'
+   }else{
+
   return (
     <div className="col-md-4 col-sm-12">
     <div className="container">
@@ -26,6 +29,7 @@ const CourseCard = ({post}) => {
     </div>
     </div>
   )
+}
 }
 
 export default CourseCard
