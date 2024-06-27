@@ -10,7 +10,7 @@ const OffCanvasRight = () => {
         <div className="offcanvas-body">
             ...
         </div>
-    </div>
+    </div> 
   )
 }
 
