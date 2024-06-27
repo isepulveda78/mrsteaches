@@ -25,13 +25,13 @@ const Subjects = () => {
                     <div className="flex-shrink-0"><Image className="rounded-circle" src={`https://dummyimage.com/50x50/ced4da/6c757d.jpg`} alt="..." width={50} height={50} priority={true}/></div>
                     <div className="ms-3">
                         <div className="fw-bold">Commenter Name</div>
-                        If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
+                        If you&apos;re going to lead a space frontier, it has to be government; it&apos;ll never be private enterprise. Because the space frontier is dangerous, and it&apos;s expensive, and it has unquantified risks.
                         <br /><Link className="ms-2 small text-info" href="#">Reply</Link>
                         <div className="d-flex mt-4">
                             <div className="flex-shrink-0"><Image className="rounded-circle" src={`https://dummyimage.com/50x50/ced4da/6c757d.jpg`} alt="..." width={50} height={50} priority={true}/></div>
                             <div className="ms-3">
                                 <div className="fw-bold">Commenter Name</div>
-                                And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
+                                And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can&apos;t get investors.
                                 <br /><Link className="ms-2 small text-info" href="#">Reply</Link></div>
                         </div>
                     

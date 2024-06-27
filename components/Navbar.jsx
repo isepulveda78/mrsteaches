@@ -21,7 +21,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top bg-primary shadow-lg">
         <div className="container">
-            <Link className="text-decoration-none varelaRound text-white mt-1" href="/"><Image src={logo} width={150} height={50} className="img-fluid" alt="Mr. S Teaches" /></Link>
+            <Link className="text-decoration-none varelaRound text-white mt-1" href="/"><Image src={logo} width={150} height={50} priority={true} className="img-fluid" alt="Mr. S Teaches" /></Link>
             <button onClick={openAndClose} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 {open ? 
                 ( <GrClose className="text-success fs-3" /> )

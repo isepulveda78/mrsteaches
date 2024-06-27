@@ -1,7 +1,7 @@
 import CourseImage from "@/components/CourseImage"
 import CourseInfo from "@/components/CourseInfo"
 import Breadcrumb from "@/components/Breadcrumb"
-import CoursesHome from "@/components/CoursesHome"
+
 import Link from "next/link"
 const Course = () => {
   return (
@@ -24,7 +24,7 @@ const Course = () => {
             </div>
             <div className="col-md-12 mt-5">
                 <h3 className="text-center mb-5">Related Courses</h3>
-                <CoursesHome />
+     
             </div>
         </div>
     </div>

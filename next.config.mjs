@@ -12,6 +12,11 @@ const nextConfig = {
                 hostname: '71f.036.myftpupload.com',
                 pathname: '**'
             },
+            {
+                protocol: 'https',
+                hostname: 'israels14.sg-host.com',
+                pathname: '**'
+            },
         ],
     },
 };

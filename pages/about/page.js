@@ -1,6 +1,5 @@
 import AboutDescription from "@/components/AboutDescription"
 import Breadcrumb from "@/components/Breadcrumb"
-import TaughtHome from "@/components/TaughtHome"
 
 const About = () => {
   return (
@@ -9,8 +8,6 @@ const About = () => {
             <Breadcrumb page={'About'} />
         </div>
             <AboutDescription />
-            <TaughtHome />
-        
     </div>
   )
 }
