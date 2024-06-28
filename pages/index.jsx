@@ -1,32 +1,74 @@
 import AboutHome from '@/components/AboutHome'
+
 import CourseCard from '@/components/CourseCard'
 import Footer from '@/components/Footer'
-import Hero from '@/components/Hero'
 import Layout from '@/components/Layout'
+import LearnMore from '@/components/LearnMore'
 import NavBar from '@/components/Navbar'
-import { getCourses } from '@/utils/wp_courses'
+import { getCourses, getSlider } from '@/utils/wp_courses'
+import Image from 'next/image'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 
-export default function Home({ courses }){
+export default function Home({ courses, slider }){
+    const responsive = {
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 1,
+          slidesToSlide: 3 // optional, default to 1.
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 1,
+          slidesToSlide: 2 // optional, default to 1.
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1,
+          slidesToSlide: 1 // optional, default to 1.
+        }
+      }
   return (
     <Layout>
         <NavBar />
             <main className="wrapper">
-                <div className="page-section">
-                    <Hero />
-                </div>
-                <div className="page-section bg-primary">
-                    <AboutHome />
-                </div>
-                <div className="page-section bg-light">
-                    <div className="text-center home-title-margin"><h2>Subjects</h2></div>
+                <div className='page-section'>
                     <div className="container">
                         <div className="row">
-                            {courses.map((course) => (
-                                <CourseCard key={course.id} post={course} />
-                            ))}
+                            <div className="col-md-8">
+                                <Carousel 
+                                responsive={responsive} 
+                                className='mb-3' 
+                                infinite={true}
+                                autoPlay={true} 
+                                autoPlaySpeed={3000}
+                                >
+                                    {slider.map((slide) => (
+                                        <div key={slide.id}>
+                                                <Image src={slide.featured_image_url} width={638} height={353} priority={true} alt="..." className="d-block w-100 rounded img-fluid"/>
+                                        </div>
+                                    ))}
+                                </Carousel>
+                            </div>
+                            <div className="col-md-4">
+                                <LearnMore />
+                            </div>
                         </div>
                     </div>
                 </div>
+                        <div className="page-section bg-primary">
+                            <AboutHome />
+                        </div>
+                    <div className="page-section bg-light">
+                        <div className="text-center home-title-margin"><h2>Subjects</h2></div>
+                        <div className="container">
+                            <div className="row">
+                                {courses.map((course) => (
+                                    <CourseCard key={course.id} post={course} />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
             </main>
         <Footer />
     </Layout>
@@ -36,10 +78,12 @@ export default function Home({ courses }){
 export async function getStaticProps(){
 
     const courses = await getCourses()
-
+    const slider = await getSlider()
+    console.log(slider)
     return {
         props: {
-          courses
+          courses,
+          slider
         },
         revalidate: 10,
     }

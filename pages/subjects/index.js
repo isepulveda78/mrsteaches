@@ -17,24 +17,24 @@ const Courses = ({ courses }) => {
                     <div className="row">
                         <div className="col-lg-3 col-md-0">
                             <div className="nav flex-column navbar-dark mb-5">
-                                <h3>Ages</h3>
+                                <h3>Grade Level</h3>
                                 <hr />
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                                     <label className="form-check-label" htmlFor="flexCheckDefault">
-                                        5 +
+                                       Elementary School
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                                     <label className="form-check-label" htmlFor="flexCheckDefault">
-                                        8 - 10
+                                        Middle School
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                                     <label className="form-check-label" htmlFor="flexCheckDefault">
-                                        10 +
+                                        High School
                                     </label>
                                 </div>
                             </div>
@@ -44,25 +44,25 @@ const Courses = ({ courses }) => {
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                                     <label className="form-check-label" htmlFor="flexCheckDefault">
-                                        HTML & CSS
+                                        Reading
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                                     <label className="form-check-label" htmlFor="flexCheckDefault">
-                                        Javascript
+                                        Math
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                                     <label className="form-check-label" htmlFor="flexCheckDefault">
-                                        Python
+                                        Writing
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                                     <label className="form-check-label" htmlFor="flexCheckDefault">
-                                        Minecraft
+                                        Coding
                                     </label>
                                 </div>
                             </div>

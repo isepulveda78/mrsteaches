@@ -5,11 +5,11 @@ import Layout from "@/components/Layout"
 import Footer from "@/components/Footer"
 import NavBar from "@/components/Navbar"
 import { BsPerson } from "react-icons/bs"
-import { LuGamepad2 } from "react-icons/lu";
 import { FaWindows, FaApple, FaChrome } from "react-icons/fa"
 import DOMPurify from "isomorphic-dompurify"
 import Image from "next/image"
 import { BiSolidCategoryAlt } from "react-icons/bi"
+
 const Course = ( {course} ) => {
 
   return (
@@ -43,7 +43,6 @@ const Course = ( {course} ) => {
                                         <div className="my-2"><h4>Tech Requirement:</h4></div>
                                     
                                         <div className="col">
-                                            
                                             <FaWindows className="text-info"/> Windows PC
                                         </div>
                                         <div className="col">
