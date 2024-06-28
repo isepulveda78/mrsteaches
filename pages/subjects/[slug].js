@@ -32,10 +32,10 @@ const Course = ( {course} ) => {
                                     <hr />
                                     <div className="my-2 row text-center">
                                         <div className="col">
-                                            <BsPerson className="text-danger mb-1" /> {course.grade_level}
+                                            <BsPerson className="text-primary mb-1" /> {course.grade_level}
                                         </div>
                                         <div className="col">
-                                            <BiSolidCategoryAlt className="text-danger mb-1" /> {course.title}
+                                            <BiSolidCategoryAlt className="text-primary mb-1" /> {course.title}
                                         </div>
                                     </div>
                                             <hr />

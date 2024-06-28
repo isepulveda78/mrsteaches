@@ -19,9 +19,9 @@ const CourseCard = ({post}) => {
                         <hr />
                         <div className="row">
                             <div className="col text-start">
-                                <BsPerson className="text-danger mb-1"/> <span className="text-danger">{post.level}</span>
+                                <BsPerson className="text-primary mb-1"/><span className="text-primary">{post.grade_level}</span>
                             </div>
-                            <div className="col text-end text-danger">
+                            <div className="col text-end text-primary">
                                 ${post.price}
                             </div>
                         </div>
