@@ -6,7 +6,6 @@ import Layout from '@/components/Layout'
 import NavBar from '@/components/Navbar'
 import { getCourses } from '@/utils/wp_courses'
 
-
 export default function Home({ courses }){
   return (
     <Layout>
@@ -23,7 +22,7 @@ export default function Home({ courses }){
                     <div className="container">
                         <div className="row">
                             {courses.map((course) => (
-                            <CourseCard key={course.id} post={course} />
+                                <CourseCard key={course.id} post={course} />
                             ))}
                         </div>
                     </div>
