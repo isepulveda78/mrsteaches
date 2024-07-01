@@ -54,9 +54,14 @@ nav .nav-link{
     text-indent: 50px;
     line-height: 25px;
 }
-.google-red{
+.btn-google{
+    color: #fff !important;
     background: #ea4335 !important;
 }
+.btn-facebook {
+    color: #fff !important;
+    background-color: #3b5998 !important;
+  }
 table > :not(caption) > * > * {
     background: transparent !important;
     border-bottom-width: 0px !important;

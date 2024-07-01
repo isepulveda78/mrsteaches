@@ -29,9 +29,9 @@ export default function Home({ courses, slider }){
         }
       }
   return (
+    <>
     <Layout>
         <NavBar />
-            <main className="wrapper">
                 <div className='page-section'>
                     <div className="container">
                         <div className="row">
@@ -69,9 +69,9 @@ export default function Home({ courses, slider }){
                             </div>
                         </div>
                     </div>
-            </main>
         <Footer />
     </Layout>
+    </>
   )
 }
 
