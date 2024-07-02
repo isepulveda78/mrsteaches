@@ -10,25 +10,24 @@ import { signIn, useSession } from 'next-auth/react'
 import Layout from "@/components/Layout"
 
 const Register = () => {
+const { data: session } = useSession()
+const router = useRouter()
+const { redirect } = router.query
 
 const [ isClient, setIsClient ] = useState(false)
 const [ email, setEmail ] = useState('')
 const [ password, setPassword ] = useState('')
-const router = useRouter()
-const { redirect } = router.query
-const { data: session } = useSession()
-
 
 useEffect(() => {
     setIsClient(true)
-    if(session?.user){
-        router.push(redirect || '/')
+    if (session?.user) {
+      router.push(redirect || '/')
     }
-},[router, session, redirect]) 
+  }, [router, session, redirect])
 
-
-const handleClick = async () => {
+const handleClick = async (e) => {
     try {
+        e.preventDefault()
         await axios.post('/api/auth/signup', {
           email,
           password,

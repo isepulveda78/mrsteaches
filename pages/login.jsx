@@ -26,8 +26,9 @@ useEffect(() => {
 },[router, session, redirect]) 
 
 
-const handleClick = async () => {
+const handleClick = async (e) => {
     try {
+        e.preventDefault()
         const result = await signIn('credentials', {
           redirect: false,
           email,
