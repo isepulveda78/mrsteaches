@@ -40,7 +40,7 @@ const NavBar = () => {
                     <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/subjects">Subjects</Link></li>
                     <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/classroom">Classroom</Link></li>
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/login" >Login</Link></li>}
-                    {!session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/Register" >Register</Link></li>}
+                    {!session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/register" >Register</Link></li>}
                     {session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="#" onClick={logoutClickHandler}>Logout</Link></li>}
                     {session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="#">{session.user.email}</Link></li>}
                 </ul>

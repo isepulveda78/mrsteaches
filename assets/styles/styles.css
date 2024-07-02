@@ -108,7 +108,9 @@ nav .nav-link:hover{
     color: #dbdc1f !important;
 }
 /* Footer */
+footer{
+    flex-shrink: 0 !important;
+}
 footer .nav-link{
     color: #fff !important;
-    flex-shrink: 0;
 }

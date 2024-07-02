@@ -32,7 +32,8 @@ export default function Home({ courses, slider }){
     <>
     <Layout>
         <NavBar />
-                <div className='page-section'>
+           <main className="wrapper">
+           <div className='page-section'>
                     <div className="container">
                         <div className="row">
                             <div className="col-md-8 mx-auto">
@@ -66,8 +67,9 @@ export default function Home({ courses, slider }){
                             </div>
                         </div>
                     </div>
-        <Footer />
-    </Layout>
+           </main>
+        </Layout>
+    <Footer />
     </>
   )
 }
@@ -76,7 +78,7 @@ export async function getStaticProps(){
 
     const courses = await getCourses()
     const slider = await getSlider()
-    console.log(slider)
+
     return {
         props: {
           courses,
