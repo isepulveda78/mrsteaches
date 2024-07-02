@@ -35,7 +35,7 @@ export default function Home({ courses, slider }){
                 <div className='page-section'>
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-8">
+                            <div className="col-md-8 mx-auto">
                                 <Carousel 
                                 responsive={responsive} 
                                 className='mb-3' 
@@ -49,9 +49,6 @@ export default function Home({ courses, slider }){
                                         </div>
                                     ))}
                                 </Carousel>
-                            </div>
-                            <div className="col-md-4">
-                                <LearnMore />
                             </div>
                         </div>
                     </div>

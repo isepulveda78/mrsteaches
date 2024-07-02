@@ -5,8 +5,14 @@ import Link from "next/link"
 import { useState } from "react"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { GrClose } from "react-icons/gr"
-
+import { signOut, useSession } from "next-auth/react"
 const NavBar = () => {
+
+  const { status, data: session } = useSession()
+
+  const logoutClickHandler = () => {
+    signOut({ callbackUrl: '/login'})
+  }
 
   const [ open, setOpen ] = useState(false)
 
@@ -33,8 +39,10 @@ const NavBar = () => {
                 <ul className="navbar-nav ms-auto py-4 py-lg-0">
                     <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/subjects">Subjects</Link></li>
                     <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/classroom">Classroom</Link></li>
-                    <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/login" >Login</Link></li>
-                    <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/register" >Register</Link></li>
+                    {!session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/login" >Login</Link></li>}
+                    {!session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/Register" >Register</Link></li>}
+                    {session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="#" onClick={logoutClickHandler}>Logout</Link></li>}
+                    {session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="#">{session.user.email}</Link></li>}
                 </ul>
             </div>
         </div>
