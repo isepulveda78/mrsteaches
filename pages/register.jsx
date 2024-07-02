@@ -1,9 +1,6 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
-import { Store } from "@/utils/Store"
 import { getError } from "@/utils/error"
-import NavBar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import { FaGoogle, FaFacebookF } from "react-icons/fa"
 import Spinner from "@/components/Spinner"
 import Button from "@/components/Button"
@@ -17,7 +14,6 @@ const Register = () => {
 const [ isClient, setIsClient ] = useState(false)
 const [ email, setEmail ] = useState('')
 const [ password, setPassword ] = useState('')
-const { state, dispatch } = useContext(Store)
 const router = useRouter()
 const { redirect } = router.query
 const { data: session } = useSession()
@@ -32,32 +28,27 @@ useEffect(() => {
 
 
 const handleClick = async () => {
-
-        try {
-            await axios.post('/api/auth/signup', {
-            email,
-            password
+    try {
+        await axios.post('/api/auth/signup', {
+          email,
+          password,
         })
-        const result = await signIn('credentials', {
-            redirect: false,
-            email,
-            password
-        })
-
-        if(result.error){
-            toast.error(result.error)
-        }
   
-    } catch (error) {
-        toast.error(getError(error))
-    }
+        const result = await signIn('credentials', {
+          redirect: false,
+          email,
+          password,
+        })
+        if (result.error) {
+          toast.error(result.error)
+        }
+      } catch (err) {
+        toast.error(getError(err))
+      }
 }
 
 return (
-<>
 <Layout>
-<NavBar />
-    <main className="wrapper">
         <div className="container mt-5">
             <div className="row">
                 <div className="col-sm-9 col-md-7 col-lg-5 mx-auto mt-3">
@@ -111,10 +102,7 @@ return (
                 </div>
             </div>
         </div>
-    </main>
-  <Footer />
 </Layout>
-</>
   )
 
 }

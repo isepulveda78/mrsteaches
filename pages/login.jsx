@@ -1,9 +1,6 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
-import { Store } from "@/utils/Store"
 import { getError } from "@/utils/error"
-import NavBar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import { FaGoogle, FaFacebookF } from "react-icons/fa"
 import Spinner from "@/components/Spinner"
 import Button from "@/components/Button"
@@ -11,12 +8,11 @@ import { toast } from "react-toastify"
 import Layout from "@/components/Layout"
 import { signIn, useSession } from 'next-auth/react'
 
-const Register = () => {
+const Login = () => {
 
 const [ isClient, setIsClient ] = useState(false)
 const [ email, setEmail ] = useState('')
 const [ password, setPassword ] = useState('')
-const { state, dispatch } = useContext(Store)
 const router = useRouter()
 const { redirect } = router.query
 const { data: session } = useSession()
@@ -33,24 +29,20 @@ useEffect(() => {
 const handleClick = async () => {
     try {
         const result = await signIn('credentials', {
-            redirect: false,
-            email,
-            password
-        })
-
-        if(result.error){
-            toast.error(result.error)
+          redirect: false,
+          email,
+          password,
+        });
+        if (result.error) {
+          toast.error(result.error)
         }
-  
-    } catch (error) {
-        toast.error(getError(error))
-    }
+      } catch (err) {
+        toast.error(getError(err))
+}
 }
 
 return (
-<>
 <Layout>
-    <NavBar />
     <div className="container mt-5">
         <div className="row">
             <div className="col-sm-9 col-md-7 col-lg-5 mx-auto mt-3">
@@ -105,10 +97,6 @@ return (
         </div>
     </div>
 </Layout>
-<Footer />
-  </>
-  )
+)}
 
-}
-
-export default Register
+export default Login

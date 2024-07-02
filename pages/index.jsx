@@ -1,10 +1,6 @@
 import AboutHome from '@/components/AboutHome'
-
 import CourseCard from '@/components/CourseCard'
-import Footer from '@/components/Footer'
 import Layout from '@/components/Layout'
-import LearnMore from '@/components/LearnMore'
-import NavBar from '@/components/Navbar'
 import { getCourses, getSlider } from '@/utils/wp_courses'
 import Image from 'next/image'
 import Carousel from 'react-multi-carousel'
@@ -29,10 +25,7 @@ export default function Home({ courses, slider }){
         }
       }
   return (
-    <>
     <Layout>
-        <NavBar />
-           <main className="wrapper">
            <div className='page-section'>
                     <div className="container">
                         <div className="row">
@@ -67,10 +60,7 @@ export default function Home({ courses, slider }){
                             </div>
                         </div>
                     </div>
-           </main>
-        </Layout>
-    <Footer />
-    </>
+    </Layout>
   )
 }
 
