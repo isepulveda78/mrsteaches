@@ -6,6 +6,7 @@ import Footer from "@/components/Footer"
 import NavBar from "@/components/Navbar"
 import { BsPerson } from "react-icons/bs"
 import { FaWindows, FaApple, FaChrome } from "react-icons/fa"
+import DOMPurify from "isomorphic-dompurify"
 import Image from "next/image"
 import { BiSolidCategoryAlt } from "react-icons/bi"
 
