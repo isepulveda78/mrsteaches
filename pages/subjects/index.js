@@ -1,15 +1,11 @@
 import CourseCard from "@/components/CourseCard"
 import Breadcrumb from "@/components/Breadcrumb"
 import Layout from "@/components/Layout"
-import NavBar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import { getCourses } from '@/utils/wp_courses'
 
 const Courses = ({ courses }) => {
   return (
-  <>
   <Layout>
-    <NavBar />
        <main className="wrapper">
         <div className="page-section">
             <div className="container">
@@ -81,9 +77,7 @@ const Courses = ({ courses }) => {
             </div>
         </div>
        </main>
-    <Footer />
   </Layout>
-  </>
   )
 }
 

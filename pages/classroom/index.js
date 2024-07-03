@@ -2,14 +2,11 @@ import Image from "next/image"
 import Link from "next/link"
 import screenshot from "@/assets/images/screenshot.png"
 import Breadcrumb from "@/components/Breadcrumb"
-import NavBar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import Layout from '@/components/Layout'
+
 const Subjects = () => {
   return (
-   <>
     <Layout>
-        <NavBar />
             <main className="wrapper">
                 <div className="container page-section">
                 <Breadcrumb page={"Minecraft"}/>
@@ -63,9 +60,7 @@ const Subjects = () => {
                 </div>
                 </div>
             </main>
-        <Footer />
     </Layout>
-   </>
   )
 }
 

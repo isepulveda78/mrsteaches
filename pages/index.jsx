@@ -5,7 +5,9 @@ import { getCourses, getSlider } from '@/utils/wp_courses'
 import Image from 'next/image'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-
+import { useState, useEffect } from 'react'
+import BigSpinner from '@/components/BigSpinner'
+import { useRouter } from 'next/router'
 export default function Home({ courses, slider }){
     const responsive = {
         desktop: {
@@ -24,25 +26,42 @@ export default function Home({ courses, slider }){
           slidesToSlide: 1 // optional, default to 1.
         }
       }
+      const [ isLoading, setIsLoading ] = useState(true)
+
+      const router = useRouter()
+      useEffect(()=> {
+        router.isReady && setIsLoading(false)
+      }, [])
+
   return (
     <Layout>
            <div className='page-section'>
                     <div className="container">
                         <div className="row">
                             <div className="col-md-8 mx-auto">
-                                <Carousel 
-                                responsive={responsive} 
-                                className='mb-3' 
-                                infinite={true}
-                                autoPlay={true} 
-                                autoPlaySpeed={3000}
-                                >
-                                    {slider.map((slide) => (
-                                        <div key={slide.id}>
-                                                <Image src={slide.featured_image_url} width={638} height={353} priority={true} alt="..." className="d-block w-100 rounded img-fluid"/>
-                                        </div>
-                                    ))}
-                                </Carousel>
+                                { isLoading  ? (
+                                       <BigSpinner />
+                                ) : (
+                                
+                                    <div className="my5">
+                                   
+                                       <Carousel 
+                                      responsive={responsive} 
+                                      className='my-3' 
+                                      infinite={true}
+                                      autoPlay={true} 
+                                      autoPlaySpeed={3000}
+                                      >
+                                          {slider.map((slide) => (
+                                          
+                                                  <div key={slide.id}>
+                                                      <Image src={slide.featured_image_url} width={638} height={353} priority={true} alt="..." className="d-block w-100 rounded img-fluid"/>
+                                                  </div>
+                                          ))}
+                                      </Carousel>
+                                    </div>
+                                )}
+                          
                             </div>
                         </div>
                     </div>

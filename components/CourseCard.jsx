@@ -13,9 +13,7 @@ const CourseCard = ({post}) => {
                 <div className="card shadow-lg mb-3">
                 <Link href={`/subjects/${post.slug}`}><Image src={post.featured_image_url} width={638} height={353} priority={true} className="card-img-top img-fluid" alt={post.title} /></Link>
                     <div className="card-body">
-
                         <Link href={`/subjects/${post.slug}`}><h5 className="card-title text-center">{post.title}</h5></Link>
-                        <p className="card-text">{post.excerpt}</p>
                         <hr />
                         <div className="row">
                             <div className="col text-start">

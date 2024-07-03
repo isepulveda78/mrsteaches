@@ -10,7 +10,7 @@ body {
     flex-direction: column !important;
 }
 .wrapper{
-    flex: 1 0 auto !important;
+    min-height: calc(100vh - 70px) !important;
 }
 a{
     text-decoration: none !important;
@@ -108,7 +108,7 @@ nav .nav-link:hover{
     color: #dbdc1f !important;
 }
 /* Footer */
-footer{
+.footer{
     flex-shrink: 0 !important;
 }
 footer .nav-link{

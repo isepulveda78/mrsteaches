@@ -2,7 +2,7 @@ import Link from "next/link"
 import { FaFacebookF, FaGithub, FaYoutube } from "react-icons/fa"
 const Footer = () => {
   return (
-    <footer className="p-4 footer shadow bg-primary">
+    <div className="p-4 footer shadow bg-primary">
       <div className="container">
               <div className="row align-items-center">
                   <div className="col-lg-4 text-lg-start link-light fw-bold">Copyright  Your Website 2023</div>
@@ -17,7 +17,7 @@ const Footer = () => {
                   </div>
               </div>
       </div>
-    </footer>
+    </div>
   )
 }
 
