@@ -22,7 +22,7 @@ const [providers, setProviders] = useState(null)
 useEffect(() => {
     setIsClient(true)
     if(session?.user){
-        router.push(redirect || 'http://localhost:3000')
+        router.push(redirect || '/')
     }
     const setAuthProviders = async () => {
         const res = await getProviders()
