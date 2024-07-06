@@ -10,10 +10,6 @@ const NavBar = () => {
 
   const { status, data: session } = useSession()
 
-  const logoutClickHandler = () => {
-    signOut({ callbackUrl: '/login'})
-  }
-
   const [ open, setOpen ] = useState(false)
 
     const openAndClose = () => {
@@ -41,7 +37,7 @@ const NavBar = () => {
                     <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/classroom">Classroom</Link></li>
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/login" >Login</Link></li>}
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/register" >Register</Link></li>}
-                    {session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="#" onClick={logoutClickHandler}>Logout</Link></li>}
+                    {session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="#" onClick={() => signOut()}>Logout</Link></li>}
                     {session && <li className="nav-item"><Link className="nav-link fw-bold text-success" href="#">{session.user.name}</Link></li>}
                 </ul>
             </div>
