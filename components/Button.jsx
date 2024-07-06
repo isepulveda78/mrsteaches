@@ -1,9 +1,9 @@
 
 
-const Button = ({children, type}) => {
+const Button = ({children, style}) => {
   return (
     <div className="d-grid mb-2">
-        <button className={`btn ${type} btn-login text-uppercase fw-bold`} type="submit">
+        <button type="button" className={`btn ${style} btn-login text-uppercase fw-bold`}>
             {children}
         </button>
     </div>

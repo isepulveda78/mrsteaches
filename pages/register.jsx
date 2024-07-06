@@ -7,7 +7,9 @@ import Button from "@/components/Button"
 import { toast } from "react-toastify"
 import axios from "axios"
 import { signIn, useSession } from 'next-auth/react'
+
 import Layout from "@/components/Layout"
+
 
 const Register = () => {
 const { data: session } = useSession()
@@ -17,18 +19,27 @@ const { redirect } = router.query
 const [ isClient, setIsClient ] = useState(false)
 const [ email, setEmail ] = useState('')
 const [ password, setPassword ] = useState('')
+const [ name, setName ] = useState('')
+
 
 useEffect(() => {
     setIsClient(true)
     if (session?.user) {
       router.push(redirect || '/')
     }
+    const setAuthProviders = async () => {
+      const res = await getProviders()
+      setProviders(res)
+    }
+
+    setAuthProviders()
   }, [router, session, redirect])
 
 const handleClick = async (e) => {
     try {
         e.preventDefault()
         await axios.post('/api/auth/signup', {
+          name,
           email,
           password,
         })
@@ -55,6 +66,20 @@ return (
                         <div className="card-body p-4 p-sm-5">
                             <h5 className="card-title text-center mb-5 fw-light fs-2">Register</h5>
                             <form onSubmit={handleClick} method="POST">
+
+                                {isClient ?   
+                                  <div className="form-floating mb-3">
+                                    <input 
+                                        type="text" 
+                                        className="form-control" 
+                                        placeholder="Username"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                    <label htmlFor="username">
+                                        Username
+                                    </label>
+                                </div> : <Spinner />}
                     
                                 {isClient ?   
                                 <div className="form-floating mb-3">
@@ -89,12 +114,7 @@ return (
                                 Sign in
                                 </Button>
                                 <hr className="my-4" />
-                                <Button type="btn-google">
-                                    <FaGoogle className="text-white fs-5 me-2" />  Sign in with Google
-                                </Button>
-                                <Button type="btn-facebook">
-                                    <FaFacebookF className="text-white fs-5 me-2" /> Sign in with Facebook
-                                </Button>
+                          
                             </form>
                         </div>
                     </div>
@@ -107,3 +127,4 @@ return (
 }
 
 export default Register
+

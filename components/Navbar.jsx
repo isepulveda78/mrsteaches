@@ -37,12 +37,12 @@ const NavBar = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ms-auto py-4 py-lg-0">
-                    <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/subjects">Subjects</Link></li>
-                    <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/classroom">Classroom</Link></li>
-                    {!session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/login" >Login</Link></li>}
-                    {!session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="/register" >Register</Link></li>}
-                    {session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="#" onClick={logoutClickHandler}>Logout</Link></li>}
-                    {session && <li className="nav-item"><Link className="nav-link fw-bold link-dark" href="#">{session.user.email}</Link></li>}
+                    <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/subjects">Subjects</Link></li>
+                    <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/classroom">Classroom</Link></li>
+                    {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/login" >Login</Link></li>}
+                    {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/register" >Register</Link></li>}
+                    {session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="#" onClick={logoutClickHandler}>Logout</Link></li>}
+                    {session && <li className="nav-item"><Link className="nav-link fw-bold text-success" href="#">{session.user.name}</Link></li>}
                 </ul>
             </div>
         </div>

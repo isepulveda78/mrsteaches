@@ -101,16 +101,10 @@ table > :not(caption) > * > * {
     margin-left: -8px;
     top: -5px;
 }
-nav .nav-link{
-    color: #fff !important;
-}
 nav .nav-link:hover{
     color: #dbdc1f !important;
 }
 /* Footer */
 .footer{
     flex-shrink: 0 !important;
-}
-footer .nav-link{
-    color: #fff !important;
 }
