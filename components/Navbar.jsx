@@ -6,9 +6,12 @@ import { useState } from "react"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { GrClose } from "react-icons/gr"
 import { signOut, useSession } from "next-auth/react"
+import profileImage from "@/assets/images/f.webp"
+
 const NavBar = () => {
 
   const { status, data: session } = useSession()
+ const profileSocialImage = session?.user?.image
 
   const [ open, setOpen ] = useState(false)
 
@@ -34,11 +37,10 @@ const NavBar = () => {
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ms-auto py-4 py-lg-0">
                     <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/subjects">Subjects</Link></li>
-                    <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/classroom">Classroom</Link></li>
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/login" >Login</Link></li>}
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/register" >Register</Link></li>}
                     {session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="#" onClick={() => signOut()}>Logout</Link></li>}
-                    {session && <li className="nav-item"><Link className="nav-link fw-bold text-success" href="#">{session.user.name}</Link></li>}
+                    {session && <li className="nav-item d-flex"><Link className="nav-link fw-bold text-success" href="/profile">{session.user.name}</Link><Link className="nav-link fw-bold text-success" href="/profile"><Image src={profileImage === '' ? profileSocialImage : profileImage} width={30} height={30} className="img-fluid rounded-circle"/></Link></li>}
                 </ul>
             </div>
         </div>

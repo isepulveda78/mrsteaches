@@ -34,8 +34,8 @@ useEffect(() => {
 
 
 const handleClick = async (e) => {
+    e.preventDefault()
     try {
-        e.preventDefault()
         const result = await signIn('credentials', {
           redirect: false,
           email,
@@ -87,10 +87,9 @@ return (
                              </div> :  <Spinner />}
 
 
-                            <Button style="btn-primary btn-login">
-                            Sign in
-                            </Button>
-                            <hr className="my-4" />
+                             <button type="submit" className="btn btn-primary btn-login">Sign in</button>
+                             <hr className="my-4" />
+
                         </form>
                         {providers && Object.values(providers).map(provider => {
                             if(provider.name === 'Credentials'){

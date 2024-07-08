@@ -20,7 +20,7 @@ async function handler(req, res) {
     return
   }
 
-  await db.connect()
+  await db()
 
   const existingUser = await User.findOne({ email: email })
   if (existingUser) {

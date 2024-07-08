@@ -6,7 +6,7 @@ import Spinner from "@/components/Spinner"
 import Button from "@/components/Button"
 import { toast } from "react-toastify"
 import axios from "axios"
-import { signIn, useSession } from 'next-auth/react'
+import { getProviders, signIn, useSession } from 'next-auth/react'
 
 import Layout from "@/components/Layout"
 
@@ -15,12 +15,11 @@ const Register = () => {
 const { data: session } = useSession()
 const router = useRouter()
 const { redirect } = router.query
-
 const [ isClient, setIsClient ] = useState(false)
 const [ email, setEmail ] = useState('')
 const [ password, setPassword ] = useState('')
 const [ name, setName ] = useState('')
-
+const [providers, setProviders] = useState(null)
 
 useEffect(() => {
     setIsClient(true)
@@ -36,25 +35,26 @@ useEffect(() => {
   }, [router, session, redirect])
 
 const handleClick = async (e) => {
+  e.preventDefault()
     try {
-        e.preventDefault()
-        await axios.post('/api/auth/signup', {
-          name,
-          email,
-          password,
-        })
-  
-        const result = await signIn('credentials', {
-          redirect: false,
-          email,
-          password,
-        })
-        if (result.error) {
-          toast.error(result.error)
-        }
-      } catch (err) {
-        toast.error(getError(err))
+      await axios.post('/api/auth/signup', {
+        name,
+        email,
+        password,
+      })
+
+      const result = await signIn('credentials', {
+        redirect: false,
+        email,
+        password,
+      })
+      if (result.error) {
+        toast.error(result.error)
+        toast.success('hello')
       }
+    } catch (err) {
+      toast.error(getError(err))
+    }
 }
 
 return (
@@ -110,12 +110,22 @@ return (
                                 </div> :  <Spinner />}
 
 
-                                <Button type="btn-primary btn-login">
-                                Sign in
-                                </Button>
+                                <button type="submit" className="btn btn-primary btn-login">Sign in</button>
                                 <hr className="my-4" />
                           
                             </form>
+                            {providers && Object.values(providers).map(provider => {
+                            if(provider.name === 'Credentials'){
+                                return
+                            }
+                            return (
+                            <div key={provider.id}>
+                                <button onClick={async () => {await signIn(provider.id)}} className="btn btn-google">
+                                    Sign in with {provider.name}
+                                </button>
+                            </div>
+                            )
+                        })}
                         </div>
                     </div>
                 </div>

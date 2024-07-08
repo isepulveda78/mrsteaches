@@ -17,6 +17,11 @@ const nextConfig = {
                 hostname: 'israels14.sg-host.com',
                 pathname: '**'
             },
+            {
+                protocol: 'https',
+                hostname: 'lh3.googleusercontent.com',
+                pathname: '**'
+            },
         ],
     },
 };
