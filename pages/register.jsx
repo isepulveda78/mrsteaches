@@ -35,8 +35,8 @@ useEffect(() => {
   }, [router, session, redirect])
 
 const handleClick = async (e) => {
-  e.preventDefault()
     try {
+      e.preventDefault()
       await axios.post('/api/auth/signup', {
         name,
         email,

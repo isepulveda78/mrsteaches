@@ -34,8 +34,8 @@ useEffect(() => {
 
 
 const handleClick = async (e) => {
-    e.preventDefault()
     try {
+        e.preventDefault()
         const result = await signIn('credentials', {
           redirect: false,
           email,
