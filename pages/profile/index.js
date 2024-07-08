@@ -7,6 +7,7 @@ const Profile = () => {
 
 const { status, data: session } = useSession()
 const profileSocialImage = session?.user?.image
+const userName = session?.user?.name
   return (
     <Layout>
         <section className='profile'>
@@ -14,7 +15,7 @@ const profileSocialImage = session?.user?.image
                 <div className='row'>
                     <div className='col-md-8 mx-auto'>
                         <div className='card shadow rounded'>
-                            <div className='card-header bg-primary'><h5 className='card-title text-success'>Name</h5></div>
+                            <div className='card-header bg-primary'><h5 className='card-title text-success'>{userName}</h5></div>
                             <div className='card-img-top text-center p-3'>
                                 <Image src={!profileSocialImage ? profileImage : profileSocialImage} width={150} height={150} property={true} className='img-fluid rounded-circle'/>
                                 <br />
