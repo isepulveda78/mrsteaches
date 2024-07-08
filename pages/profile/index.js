@@ -16,7 +16,7 @@ const profileSocialImage = session?.user?.image
                         <div className='card shadow rounded'>
                             <div className='card-header bg-primary'><h5 className='card-title text-success'>Name</h5></div>
                             <div className='card-img-top text-center p-3'>
-                                <Image src={profileImage === '' ? profileSocialImage : profileImage} width={150} height={150} property={true} className='img-fluid rounded-circle'/>
+                                <Image src={!profileSocialImage ? profileImage : profileSocialImage} width={150} height={150} property={true} className='img-fluid rounded-circle'/>
                                 <br />
                                 <Link href="/" className='btn btn-primary btn-sm mt-3'>Update</Link>
                             </div>
