@@ -20,13 +20,6 @@ const db = async () => {
     console.log(error)
   }
 
-const disconnectDB = async () => {
-  if(!connected){
-    await mongoose.disconnect()
-    connected = false
-    console.log('MongoDB is disconnected')
-  }
-}
 }
 
 export default db
