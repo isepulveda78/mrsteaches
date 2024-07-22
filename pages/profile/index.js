@@ -48,7 +48,7 @@ const uploadHandler = async (e) => {
       console.log(err)
     }
   }
-
+ 
 const submitHandler = async () => {
     try {
         await axios.put(`/api/user/${userId}`, {
