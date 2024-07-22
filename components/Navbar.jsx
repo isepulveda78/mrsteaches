@@ -40,7 +40,7 @@ const NavBar = () => {
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/login" >Login</Link></li>}
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/register" >Register</Link></li>}
                     {session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="#" onClick={() => signOut()}>Logout</Link></li>}
-                    {session && <li className="nav-item d-flex"><Link className="nav-link fw-bold text-success" href="/profile">{session.user.name}</Link><Link className="nav-link fw-bold text-success" href="/profile"><Image src={!profileSocialImage ? profileImage : profileSocialImage} width={30} height={30} className="img-fluid rounded-circle" alt="Profile Picture"/></Link></li>}
+                    {session && <li className="nav-item d-flex"><Link className="nav-link fw-bold text-success" href="/profile">{session.user.name}</Link><Link className="nav-link fw-bold text-success" href="/profile"><Image src={!profileSocialImage ? profileImage : profileSocialImage} width={30} height={30} className="img-fluid rounded-circle nav-profile-image" alt="Profile Picture"/></Link></li>}
                 </ul>
             </div>
         </div>

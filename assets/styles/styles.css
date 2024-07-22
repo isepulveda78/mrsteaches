@@ -93,6 +93,14 @@ table > :not(caption) > * > * {
         right: auto;
     }
 }
+.nav-profile-image {
+    width: 30px !important;
+    height: 30px !important;
+}
+.profile-image{
+    width: 150px !important;
+    height: 150px !important;
+}
 .cart-number{
     position: relative;
     padding: 1px 5px;
