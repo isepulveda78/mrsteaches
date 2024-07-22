@@ -128,7 +128,7 @@ const submitHandler = async () => {
                                 id="image"
                                 name="image"
                                 value={image}
-                        
+                                disabled
                                 />
                             </div>
 
