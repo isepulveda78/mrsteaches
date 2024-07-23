@@ -32,8 +32,6 @@ const putHandler = async (req, res) => {
     await db()
     const user = await User.findById(req.query.id)
     if(user){
-        user.name = req.body.name
-        user.password = bcryptjs.hashSync(req.body.password)
         user.image = req.body.image
     }
         await user.save()
