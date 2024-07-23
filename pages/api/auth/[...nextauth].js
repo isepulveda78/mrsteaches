@@ -19,6 +19,11 @@ export default NextAuth({
       return { ...token, ...user }
     },
     async session({ session, token }) {
+      await db()
+      const user = await User.findOne({ email: session.user.email })
+
+      session.user.id = user._id.toString()
+
       if (token?._id) session.user._id = token._id
       if (token?.isAdmin) session.user.isAdmin = token.isAdmin
       if (token?.image) session.user.image = token.image

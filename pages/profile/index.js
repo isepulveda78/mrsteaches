@@ -33,7 +33,6 @@ const uploadHandler = async (e) => {
       formData.append('api_key', process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY);
       const { data } = await axios.post(url, formData)
       setImage(data.secure_url)
-
       await update({
         ...session,
         user: {
@@ -52,9 +51,9 @@ const uploadHandler = async (e) => {
 const submitHandler = async () => {
     try {
         await axios.put(`/api/user/${userId}`, {
-            image,
             name,
-            password
+            password,
+            image
         })
         toast.success('Profile Updated')
     } catch (error) {
@@ -128,6 +127,7 @@ const submitHandler = async () => {
                                 id="image"
                                 name="image"
                                 value={image}
+                                onChange={(e) => setImage(e.target.value)}
                                 disabled
                                 />
                             </div>
