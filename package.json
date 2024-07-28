@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^2.7.3",
+    "@stripe/stripe-js": "^4.1.0",
     "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.2.0",
@@ -26,7 +28,7 @@
     "react-multi-carousel": "^2.8.5",
     "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.5",
-    "stripe": "^16.2.0"
+    "stripe": "^16.4.0"
   },
   "devDependencies": {
     "eslint": "^8",

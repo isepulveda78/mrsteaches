@@ -37,6 +37,7 @@ const NavBar = () => {
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ms-auto py-4 py-lg-0">
                     <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/subjects">Subjects</Link></li>
+                    <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/pricing">Pricing</Link></li>
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/login" >Login</Link></li>}
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/register" >Register</Link></li>}
                     {session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="#" onClick={() => signOut()}>Logout</Link></li>}

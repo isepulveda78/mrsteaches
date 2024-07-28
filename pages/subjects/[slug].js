@@ -2,7 +2,6 @@ import Breadcrumb from "@/components/Breadcrumb"
 import Link from "next/link"
 import { getCourse, getSlugs } from "@/utils/wp_courses"
 import Layout from "@/components/Layout"
-import Footer from "@/components/Footer"
 import NavBar from "@/components/Navbar"
 import { BsPerson } from "react-icons/bs"
 import { FaWindows, FaApple, FaChrome } from "react-icons/fa"
@@ -77,7 +76,6 @@ const Course = ( {course} ) => {
                     </div>
                 </div>
             </main>
-        <Footer />
     </Layout>
   )
 }

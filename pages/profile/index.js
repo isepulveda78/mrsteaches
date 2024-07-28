@@ -74,7 +74,7 @@ const submitHandler = async () => {
                            
                             <ul className='list-group list-group-flush'>
                                 <li className="list-group-item text-center fw-bold fs-5">Enrolled in:</li>
-                                <li className="list-group-item">An item <span className='float-end'><Link href="/" className='btn btn-danger btn-sm'>Cancel</Link></span></li>
+                                <li className="list-group-item"><span className='float-end'>{}<Link href="/" className='btn btn-danger btn-sm'>Cancel</Link></span></li>
                             </ul>
                         </div>
                     </div>

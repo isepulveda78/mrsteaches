@@ -1,7 +1,6 @@
 import { getToken } from "next-auth/jwt"
 import User from "@/models/User"
 import db from "@/utils/database"
-import bcryptjs from 'bcryptjs'
 
 const handler = async (req, res) => {
     const user = await getToken({req})
