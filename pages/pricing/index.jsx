@@ -9,6 +9,7 @@ const Prices = () => {
     const [ prices, setPrices ] = useState([])
     const [ userSubscriptions, setUserSubscription ] = useState([])
     const { data: session, update } = useSession()
+
     const router = useRouter()
     useEffect(()=> {
         fetchPrices()

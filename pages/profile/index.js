@@ -40,7 +40,6 @@ const uploadHandler = async (e) => {
             image: data.secure_url
         }
     })
-    console.log(data.secure_url)
     toast.success('Image Uploaded')
     } catch (err) {
       toast.error(err)

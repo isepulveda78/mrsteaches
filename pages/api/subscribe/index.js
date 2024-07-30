@@ -6,6 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 const handler = async (req, res) => {
     const getUserToken = await getToken({req})
+    console.log(getUserToken)
     try {
         await db()
         const user = await User.findById(getUserToken._id)
@@ -18,11 +19,11 @@ const handler = async (req, res) => {
                     quantity: 1
                 },
             ],
+            customer: user.stripe_customer_id,
             success_url: `${process.env.NEXT_PUBLIC_DOMAIN}/success`,
             cancel_url: `${process.env.NEXT_PUBLIC_DOMAIN}/profle`,
         })
         res.send(session.url)
-        return
     } catch (error) {
         console.log(error)
     }
