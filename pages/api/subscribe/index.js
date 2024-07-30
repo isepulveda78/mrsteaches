@@ -18,7 +18,6 @@ const handler = async (req, res) => {
                     quantity: 1
                 },
             ],
-            customer: user.stripe_customer_id,
             success_url: `${process.env.NEXT_PUBLIC_DOMAIN}/success`,
             cancel_url: `${process.env.NEXT_PUBLIC_DOMAIN}/profle`,
         })
