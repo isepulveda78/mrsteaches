@@ -18,7 +18,7 @@ const Success = () => {
         if(res.status === 200){
             router.push('/profile')
         }else{
-            router.push('/')
+            router.push('/login')
         }
     }
 

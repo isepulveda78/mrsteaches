@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema(
         password: { type: String, required: true },
         image: { type: String, required: false },
         stripe_customer_id: { type: String, required: false},
-        subscriptions: { type: Array, required: false},
+        subscriptions: { type: String, required: false},
+        subscription_status: { type: Boolean, required: false},
         isAdmin: { type: Boolean, required: true, default: false },
     },
     {

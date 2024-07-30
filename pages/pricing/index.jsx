@@ -15,20 +15,15 @@ const Prices = () => {
     
     const fetchPrices = async () => {
         const { data } = await axios.get('/api/subscribe/prices')
-        console.log(data)
         setPrices(data)
     }
 
 const handleClick = async (e, price) => {
     e.preventDefault()
-    if(userSubscriptions && userSubscriptions.includes(price.id)) {
-        router.push(`/profile`)
-        return
-    }
-       const { data } = await axios.post("/api/subscribe", {
-            priceId: price.id
-        })
-    window.open(data)
+    const { data } = await axios.post("/api/subscribe", {
+        priceId: price.id
+     })
+        window.open(data)
 }
   return (
     <Layout>

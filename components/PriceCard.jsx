@@ -1,4 +1,5 @@
 import { useSession } from "next-auth/react"
+import Link from "next/link"
 
 const PriceCard = ({ price, handleSubscription, userSubscriptions }) => {
 
@@ -7,7 +8,7 @@ const PriceCard = ({ price, handleSubscription, userSubscriptions }) => {
     const buttonText = () => {
       return session && session?.user ? "Buy the plan" : "Sign up"
     }
-  
+
     return (
       <div className="col">
         <div className='card mb-4 rounded-3 shadow-sm'>

@@ -3,28 +3,22 @@ import User from "@/models/User"
 import { getToken } from "next-auth/jwt"
 import Stripe from "stripe"
 
-const stripe = new Stripe(process.env.STRIPE_API_SECRET)
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
-const handler = async (req, res) => {
-    const user = await getToken({req})
-
+const getHandler = async (req, res) => {
+    const useToken = await getToken({req})
     try {
-        if(user){
             await db()
-            const foundUser = await User.findById(user._id)
-            if(foundUser){
-                const portalSession = await stripe.billingPortal.session.create({
-                    customer: foundUser.customerId,
-                    return_url: `${process.env.NEXT_PUBLIC_DOMAIN}/profle`
-                })
-                res.send(portalSession.url)
-            }
-        }else{
-            res.send({ message: 'Not Authorized'})
-        }
-    } catch (error) {
+            const user = await User.findById(useToken._id)
+            const portalSession = await stripe.billingPortal.sessions.create({
+                    customer: user.stripe_customer_id,
+                    return_url: `${process.env.NEXT_PUBLIC_DOMAIN}/success`,
         
+            })
+            res.send(portalSession.url)
+    } catch (error) {
+        console.log(error)
     }
 }
 
-export default handler
+export default getHandler

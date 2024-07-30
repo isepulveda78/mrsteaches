@@ -62,7 +62,8 @@ export default NextAuth({
   pages: {
     signIn: '/login',
     signOut: '/',
-    classroom: '/classroom'
+    classroom: '/classroom',
+    profile: '/profile'
   }
 })
 

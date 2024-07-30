@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useSession } from "next-auth/react"
 import profileImage from "@/assets/images/f.webp"
 import { toast } from 'react-toastify'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const Profile = () => {
@@ -15,9 +15,9 @@ const profileSocialImage = session?.user?.image
 const userName = session?.user?.name
 const userId = session?.user?.id
 
-const [ name, setName ] = useState('')
-const [ password, setPassword ] = useState('')
+
 const [ image, setImage ] = useState('')
+const [ subscriptions, setSubscriptions ] = useState('')
 
 const uploadHandler = async (e) => {
     const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`;
@@ -47,7 +47,27 @@ const uploadHandler = async (e) => {
       console.log(err)
     }
   }
- 
+
+const getUserCourses = async () => {
+    try {
+       const { data } = await axios.get(`/api/subscribe/status`)
+       console.log(data)
+       if(data){
+            setSubscriptions(data.updateUser)
+       } else {
+          return
+       }  
+    } catch (error) {
+        toast.error(error)
+    }
+}
+
+useEffect(() => {
+   if(session){
+    getUserCourses()
+   }
+},[session])
+
 const submitHandler = async () => {
     try {
         await axios.put(`/api/user/${userId}`, {
@@ -56,6 +76,15 @@ const submitHandler = async () => {
         toast.success('Profile Updated')
     } catch (error) {
         toast.error(error);
+    }
+}
+
+const onCancel = async () => {
+    try {
+        const { data } = await axios.get('/api/subscribe/customerPortal')
+        window.open(data)
+    } catch (error) {
+        toast.error(error)
     }
 }
   return (
@@ -71,11 +100,19 @@ const submitHandler = async () => {
                                 <br />
                                 <Link href="/" className='btn btn-primary btn-sm mt-3' data-bs-toggle="modal" data-bs-target="#profileModal">Update</Link>
                             </div>
-                           
+                            {subscriptions?.subscription_status === false ? 
                             <ul className='list-group list-group-flush'>
                                 <li className="list-group-item text-center fw-bold fs-5">Enrolled in:</li>
-                                <li className="list-group-item"><span className='float-end'>{}<Link href="/" className='btn btn-danger btn-sm'>Cancel</Link></span></li>
+                                  
+                                       <li className="list-group-item">
+                                        {subscriptions.subscriptions}
+                                        <span className='float-end'>
+                                       <button 
+                                       className='btn btn-danger btn-sm'
+                                       onClick={onCancel}
+                                       >Cancel</button></span></li>
                             </ul>
+                                : '' }
                         </div>
                     </div>
                 </div>

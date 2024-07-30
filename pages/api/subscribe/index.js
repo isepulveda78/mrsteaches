@@ -23,6 +23,7 @@ const handler = async (req, res) => {
             cancel_url: `${process.env.NEXT_PUBLIC_DOMAIN}/profle`,
         })
         res.send(session.url)
+        return
     } catch (error) {
         console.log(error)
     }
