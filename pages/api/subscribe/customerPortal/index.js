@@ -9,7 +9,7 @@ const getHandler = async (req, res) => {
     const useToken = await getToken({req})
     try {
             await db()
-            const user = await User.findById(useToken._id)
+            const user = await User.findOne({ email: useToken.email})
             const portalSession = await stripe.billingPortal.sessions.create({
                     customer: user.stripe_customer_id,
                     return_url: `${process.env.NEXT_PUBLIC_DOMAIN}/success`,

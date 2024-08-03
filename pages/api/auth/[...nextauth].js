@@ -15,8 +15,22 @@ export default NextAuth({
       if(trigger === "update"){
         return {...token, ...session.user}
       }
-   
       return { ...token, ...user }
+    },
+    async signIn({ user }) {
+      await db()
+      const userExists = await User.findOne({ email: user.email })
+      if (!userExists) {
+        const username = user.name.slice(0, 20)
+        const newPassword =  Math.random().toString(36).slice(2) + Math.random().toString(36).toUpperCase().slice(2)
+        await User.create({
+          email: user.email,
+          password: bcryptjs.hashSync(newPassword),
+          name: username,
+          image: user.picture,
+        })
+      }
+      return true
     },
     async session({ session, token }) {
       await db()
@@ -31,7 +45,6 @@ export default NextAuth({
       if (token?.image) session.user.image = token.image
       return session
     },
-
       async redirect({ url, baseUrl }) {
         return baseUrl
       }
@@ -57,9 +70,9 @@ export default NextAuth({
       },
     }),
     GoogleProvider({
-        clientId: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      }),
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
   ],
   pages: {
     signIn: '/login',

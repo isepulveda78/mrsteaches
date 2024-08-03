@@ -15,7 +15,6 @@ const profileSocialImage = session?.user?.image
 const userName = session?.user?.name
 const userId = session?.user?.id
 
-
 const [ image, setImage ] = useState('')
 const [ subscriptions, setSubscriptions ] = useState('')
 
@@ -50,7 +49,6 @@ const uploadHandler = async (e) => {
 const getUserCourses = async () => {
     try {
        const { data } = await axios.get(`/api/subscribe/status`)
-       console.log(data)
        if(data){
             setSubscriptions(data.updateUser)
        } else {
@@ -99,7 +97,7 @@ const onCancel = async () => {
                                 <br />
                                 <Link href="/" className='btn btn-primary btn-sm mt-3' data-bs-toggle="modal" data-bs-target="#profileModal">Update</Link>
                             </div>
-                            {subscriptions?.subscription_status === false ? 
+                            {subscriptions?.subscription_status === 'active' ? 
                             <ul className='list-group list-group-flush'>
                                 <li className="list-group-item text-center fw-bold fs-5">Enrolled in:</li>
                                   
@@ -109,7 +107,7 @@ const onCancel = async () => {
                                        <button 
                                        className='btn btn-danger btn-sm'
                                        onClick={onCancel}
-                                       >Cancel</button></span></li>
+                                       >Manage Payments</button></span></li>
                             </ul>
                                 : '' }
                         </div>

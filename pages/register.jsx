@@ -50,7 +50,6 @@ const handleClick = async (e) => {
       })
       if (result.error) {
         toast.error(result.error)
-        toast.success('hello')
       }
     } catch (err) {
       toast.error(getError(err))

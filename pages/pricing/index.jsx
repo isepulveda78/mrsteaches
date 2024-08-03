@@ -9,7 +9,7 @@ const Prices = () => {
     const [ prices, setPrices ] = useState([])
     const [ userSubscriptions, setUserSubscription ] = useState([])
     const { data: session, update } = useSession()
-
+    console.log(session?.user)
     const router = useRouter()
     useEffect(()=> {
         fetchPrices()
@@ -40,10 +40,8 @@ const handleClick = async (e, price) => {
         <div className="wrapper">
             <div className="container">
                 <div className="page-section">
+                  
                     {prices && prices.map((price) => {
-                        if(price.nickname !== "Monthly"){
-                            return
-                        }
                         return (
                             <PriceCard 
                             key={price.id}
