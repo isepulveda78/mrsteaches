@@ -10,7 +10,7 @@ import axios from 'axios'
 const Profile = () => {
 
 const { data: session, update } = useSession()
-
+console.log(session)
 const profileSocialImage = session?.user?.image
 const userName = session?.user?.name
 const userId = session?.user?.id
