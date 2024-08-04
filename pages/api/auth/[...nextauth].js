@@ -41,7 +41,7 @@ export default NextAuth({
       if (token?._id) session.user._id = token._id
       if (token?.isAdmin) session.user.isAdmin = token.isAdmin
       if (token?.image) session.user.image = token.image
-      if (session?.image) token.image = session.user.image
+      if (session?.user.image) session.user.image = token.image
       return session
     },
       async redirect({ url, baseUrl }) {
