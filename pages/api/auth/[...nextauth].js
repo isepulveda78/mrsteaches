@@ -38,9 +38,8 @@ export default NextAuth({
 
       session.user._id = user._id.toString()
       session.user.id = user._id.toString() 
-      
+         
       if (token?._id) session.user._id = token._id
-      if (token?.id) session.user._id =  session.user._id
       if (token?.isAdmin) session.user.isAdmin = token.isAdmin
       if (token?.image) session.user.image = token.image
       return session
