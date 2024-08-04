@@ -35,8 +35,7 @@ export default NextAuth({
     async session({ session, token }) {
       await db()
       const user = await User.findOne({ email: session.user.email })
-
-      session.user._id = user._id.toString()
+      
       session.user.id = user._id.toString() 
          
       if (token?._id) session.user._id = token._id
