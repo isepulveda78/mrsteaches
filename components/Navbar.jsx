@@ -1,4 +1,3 @@
-'use client'
 import Image from "next/image"
 import logo from "@/assets/images/logo.png"
 import Link from "next/link"
@@ -24,19 +23,19 @@ const NavBar = () => {
     }
 
   return (
-    <nav className="navbar navbar-expand-lg fixed-top bg-primary shadow-lg">
+    <nav className="navbar navbar-expand-lg fixed-top bg-dark shadow-lg">
         <div className="container">
             <Link className="text-decoration-none varelaRound text-white mt-1" href="/"><Image src={logo} width={150} height={50} priority={true} className="img-fluid" alt="Mr. S Teaches" /></Link>
             <button onClick={openAndClose} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 {open ? 
-                ( <GrClose className="text-success fs-3" /> )
+                ( <GrClose className="text-success fw-bold fs-3" /> )
                     :
-                ( <GiHamburgerMenu className="text-success fs-3" /> )
+                ( <GiHamburgerMenu className="text-success fw-bold fs-3" /> )
             }
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ms-auto py-4 py-lg-0">
-                    <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/subjects">Subjects</Link></li>
+                    <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/games">Games</Link></li>
                     <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/pricing">Pricing</Link></li>
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/login" >Login</Link></li>}
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/register" >Register</Link></li>}

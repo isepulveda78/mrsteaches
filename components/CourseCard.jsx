@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { BsPerson } from "react-icons/bs"
+import { MdArrowRightAlt } from "react-icons/md"
 import Link from "next/link"
 
 const CourseCard = ({post}) => {
@@ -8,25 +8,24 @@ const CourseCard = ({post}) => {
    }else{
 
   return (
-    
-            <div className="col-md-4 col-sm-12 courses">
-                <div className="container">
-                        <div className="card shadow-lg mb-3">
-                        <Link href={`/subjects/${post.slug}`}><Image src={post.featured_image_url} width={638} height={353} priority={true} className="card-img-top img-fluid" alt={post.title} /></Link>
+            <div className="col-lg-4 mb-lg-0 courses">
+                    <div className="card lift mb-3">
+                        <div className="card-flag card-flag-dark card-flag-top-right">{post.grade_level}</div>
+                            <Link href={`/subjects/${post.slug}`}>
+                                <Image 
+                                src={post.featured_image_url} 
+                                width={638} 
+                                height={353} 
+                                priority={true} 
+                                className="card-img-top img-fluid" 
+                                alt={post.title} />
+                            </Link>
                             <div className="card-body">
-                                <Link href={`/subjects/${post.slug}`}><h5 className="card-title text-center">{post.title}</h5></Link>
-                                <hr />
-                                <div className="row">
-                                    <div className="col text-start">
-                                        <BsPerson className="text-primary mb-1"/><span className="text-primary">{post.grade_level}</span>
-                                    </div>
-                                    <div className="col text-end text-primary">
-                                        ${post.price}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
+                                <Link href={`/games/${post.slug}`}>
+                                    <div className="text-dark text-center">{post.title}</div>
+                                </Link>
+                             </div>
+                    </div>
             </div>
      
   )
