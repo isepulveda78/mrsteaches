@@ -11,7 +11,7 @@ const CourseCard = ({post}) => {
             <div className="col-lg-4 mb-lg-0 courses">
                     <div className="card lift mb-3">
                         <div className="card-flag card-flag-dark card-flag-top-right">{post.grade_level}</div>
-                            <Link href={`/subjects/${post.slug}`}>
+                            <Link href={`/games/${post.slug}`}>
                                 <Image 
                                 src={post.featured_image_url} 
                                 width={638} 

@@ -10,7 +10,7 @@ import axios from 'axios'
 const Profile = () => {
 
 const { data: session, update } = useSession()
-console.log(session)
+
 const profileSocialImage = session?.user?.image
 const userName = session?.user?.name
 const userId = session?.user?.id
@@ -89,13 +89,13 @@ const onCancel = async () => {
         <section className='profile page-section'>
             <div className='container'>
                 <div className='row'>
-                    <div className='col-md-8 mx-auto'>
-                        <div className='card shadow rounded'>
-                            <div className='card-header bg-primary'><h5 className='card-title text-success'>{userName}</h5></div>
+                    <div className='col-md-6 mx-auto'>
+                        <div className='card'>
+                            <div className='card-header bg-dark'><h5 className='mt-1 text-white'>{userName}</h5></div>
                             <div className='card-img-top text-center p-3'>
                                 <Image src={!profileSocialImage ? profileImage : profileSocialImage} width={150} height={150} priority="true" className='img-fluid rounded-circle profile-image' alt={`${userName} Profile Photo`}/>
                                 <br />
-                                <Link href="/" className='btn btn-primary btn-sm mt-3' data-bs-toggle="modal" data-bs-target="#profileModal">Update</Link>
+                                <Link href="/" className='btn btn-dark btn-sm mt-3' data-bs-toggle="modal" data-bs-target="#profileModal">Update</Link>
                             </div>
                             {subscriptions?.subscription_status === 'active' ? 
                             <ul className='list-group list-group-flush'>

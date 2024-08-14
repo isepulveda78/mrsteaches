@@ -63,6 +63,7 @@ export default NextAuth({
             email: user.email,
             image: user.image,
             isAdmin: user.isAdmin,
+            subscription_status: user.subscription_status
           }
         }
         throw new Error('Invalid email or password')

@@ -3,8 +3,6 @@ import CourseCard from '@/components/CourseCard'
 import Layout from '@/components/Layout'
 import { getCourses, getSlider } from '@/utils/wp_courses'
 import 'react-multi-carousel/lib/styles.css'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 import Hero from '@/components/Hero'
 import Link from 'next/link'
 
@@ -21,7 +19,7 @@ export default function Home({ courses }){
                     ))}
                 </div>
 
-                <div className='d-grid mt-3 text-center'>
+                <div className='d-grid my-3 text-center'>
                         <Link href="/games" className="btn btn-outline-danger">
                             View All
                         </Link>

@@ -4,7 +4,6 @@ import db from "@/utils/database"
 
 const handler = async (req, res) => {
     const user = await getToken({req})
-
         if(user){
             if (req.method === 'GET') {
                 return getHandler(req, res, user);
@@ -18,7 +17,6 @@ const handler = async (req, res) => {
         }else{
             res.send({message: 'Not authorized'})
         }
-
 }
 
 const getHandler = async (req, res) => {

@@ -1,9 +1,9 @@
-import React from 'react'
+
 
 const Hero = () => {
   return (
-    <header className="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-dark overlay-90">
-    <div className="page-header-ui-content py-5 position-relative">
+    <header className="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-dark overlay-60">
+    <div className="page-header-ui-content position-relative">
         <div className="container px-5">
             <div className="row gx-5 justify-content-center">
                 <div className="col-xl-8 col-lg-10 text-center">

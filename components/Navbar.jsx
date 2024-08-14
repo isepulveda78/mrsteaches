@@ -9,9 +9,9 @@ import profileImage from "@/assets/images/f.webp"
 
 const NavBar = () => {
 
-  const { status, data: session } = useSession()
+ const { status, data: session } = useSession()
  const profileSocialImage = session?.user?.image
-
+ console.log(session)
   const [ open, setOpen ] = useState(false)
 
     const openAndClose = () => {
