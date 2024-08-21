@@ -11,28 +11,28 @@ const PriceCard = ({ price, handleSubscription, userSubscriptions }) => {
     }
 
     return (
-      <div class="col-lg-4 mb-5 mb-lg-0">
-      <div class="card pricing h-100">
-          <div class="card-body p-5">
-              <div class="text-center">
-                  <div class="badge bg-light text-dark rounded-pill badge-marketing badge-sm">{price.nickname}</div>
-                  <div class="pricing-price">
+      <div className="col-lg-4 mb-5 mb-lg-0">
+      <div className="card pricing h-100">
+          <div className="card-body p-5">
+              <div className="text-center">
+                  <div className="badge bg-light text-dark rounded-pill badge-marketing badge-sm">{price.nickname}</div>
+                  <div className="pricing-price">
                       <sup>$</sup>
                       4.99
-                      <span class="pricing-price-period">/mo</span>
+                      <span className="pricing-price-period">/mo</span>
                   </div>
               </div>
-              <ul class="fa-ul pricing-list">
-                  <li class="pricing-list-item">
-                      <FaRegCheckCircle class="far fa-circle text-teal me-2"/>
-                      <span class="text-dark">1 user</span>
+              <ul className="fa-ul pricing-list">
+                  <li className="pricing-list-item">
+                      <FaRegCheckCircle className="far fa-circle text-teal me-2"/>
+                      <span className="text-dark">1 user</span>
                   </li>
-                  <li class="pricing-list-item">
-                      <FaRegCheckCircle class="far fa-circle text-teal me-2"/>
-                      <span class="text-dark">Community support</span>
+                  <li className="pricing-list-item">
+                      <FaRegCheckCircle className="far fa-circle text-teal me-2"/>
+                      <span className="text-dark">Community support</span>
                   </li>
-                  <li class="pricing-list-item">
-                     <FaRegCheckCircle class="far fa-circle text-teal me-2"/>
+                  <li className="pricing-list-item">
+                     <FaRegCheckCircle className="far fa-circle text-teal me-2"/>
                       All Games
                   </li>
               </ul>

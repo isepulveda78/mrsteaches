@@ -1,9 +1,9 @@
-
-
+import background from '../assets/images/background.png'
+import Search from './Search'
 const Hero = () => {
   return (
-    <header className="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-dark overlay-60">
-    <div className="page-header-ui-content position-relative">
+    <header className="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-primary overlay-90" >
+    <div className="page-header-ui-content py-5 position-relative">
         <div className="container px-5">
             <div className="row gx-5 justify-content-center">
                 <div className="col-xl-8 col-lg-10 text-center">
@@ -13,12 +13,7 @@ const Hero = () => {
             </div>
             <div className="row gx-5 justify-content-center">
                 <div className="col-xl-6 col-lg-8 text-center">
-                    <form className="row row-cols-1 row-cols-md-auto g-3 align-items-center">
-                        <div className="col flex-grow-1">
-                            <input className="form-control form-control-solid" id="inputEmail" type="text" placeholder="Search Games..." />
-                        </div>
-                        <div className="col"><button className="btn btn-teal fw-500" type="submit">Search</button></div>
-                    </form>
+                    <Search />
                 </div>
             </div>
         </div>
