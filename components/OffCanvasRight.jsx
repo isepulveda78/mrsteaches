@@ -13,5 +13,4 @@ const OffCanvasRight = () => {
     </div> 
   )
 }
-
 export default OffCanvasRight

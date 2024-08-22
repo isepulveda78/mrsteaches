@@ -11,7 +11,7 @@ const CourseCard = ({post}) => {
             <div className="col-lg-4 mb-lg-0 courses">
                     <div className="card lift mb-3">
                         <div className="card-flag card-flag-dark card-flag-top-right">{post.grade_level}</div>
-                            <Link href={`/games/${post.slug}`}>
+                            <Link href={`/lessons/${post.slug}`}>
                                 <Image 
                                 src={post.featured_image_url} 
                                 width={638} 
@@ -21,7 +21,7 @@ const CourseCard = ({post}) => {
                                 alt={post.title} />
                             </Link>
                             <div className="card-body">
-                                <Link href={`/games/${post.slug}`}>
+                                <Link href={`/lessons/${post.slug}`}>
                                     <div className="text-dark text-center">{post.title}</div>
                                 </Link>
                              </div>

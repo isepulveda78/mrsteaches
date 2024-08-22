@@ -6,7 +6,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 const handler = async (req, res) => {
     const getSessionEmail = await getToken({req})
-    console.log('Token Email :', getSessionEmail)
     try {
         await db()
         const user = await User.collection.find({ email: getSessionEmail.email})

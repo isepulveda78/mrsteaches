@@ -1,6 +1,7 @@
 import Login from "./Login"
 import Image from "next/image"
 import logo from '@/assets/images/logo.png'
+
 const OffCanvasLeft = () => {
   return (
     <div className="offcanvas offcanvas-start gradient-background-primary" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -16,5 +17,4 @@ const OffCanvasLeft = () => {
     </div>
   )
 }
-
 export default OffCanvasLeft

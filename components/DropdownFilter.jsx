@@ -10,9 +10,9 @@ const DropdownFilter = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if(gradeLevel === ''){
-            router.push('/games')
+            router.push('/lessons')
         }else{
-            router.push(`/games/filter?term=${gradeLevel}`)
+            router.push(`/lessons/filter?term=${gradeLevel}`)
         }
     }
     return (
@@ -31,15 +31,15 @@ const DropdownFilter = () => {
                     <option value="Elementary Science">K-5 Science</option>
                     <option value="Elementary Social Studies">K-5 Social Studies</option>
 
-                    <option value="Middle Math">6-8 Math</option>
+                    {/* <option value="Middle Math">6-8 Math</option>
                     <option value="Middle Language Arts">6-8 Language Arts</option>
                     <option value="Middle Science">6-8 Science</option>
-                    <option value="Middle Social Studies">6-8 Social Studies</option>
+                    <option value="Middle Social Studies">6-8 Social Studies</option> */}
 
-                    <option value="High Math">9-12 Math</option>
+                    {/* <option value="High Math">9-12 Math</option>
                     <option value="High Language Arts">9-12 Language Arts</option>
                     <option value="High Science">9-12 Science</option>
-                    <option value="High Social Social Studies">9-12 Social Studies</option>
+                    <option value="High Social Social Studies">9-12 Social Studies</option> */}
                 </select>
             </div>
             <div className="col-md-3 mb-3">

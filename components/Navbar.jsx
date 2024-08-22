@@ -11,9 +11,8 @@ const NavBar = () => {
 
  const { status, data: session } = useSession()
  const profileSocialImage = session?.user?.image
- console.log(session)
-  const [ open, setOpen ] = useState(false)
 
+  const [ open, setOpen ] = useState(false)
     const openAndClose = () => {
           if(open){
             setOpen(false)
@@ -35,7 +34,7 @@ const NavBar = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ms-auto py-4 py-lg-0">
-                    <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/games">Games</Link></li>
+                    <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/lessons">Lessons</Link></li>
                     <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/pricing">Pricing</Link></li>
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/login" >Login</Link></li>}
                     {!session && <li className="nav-item"><Link className="nav-link fw-bold link-light" href="/register" >Register</Link></li>}

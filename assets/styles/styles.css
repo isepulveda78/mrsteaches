@@ -115,6 +115,10 @@ table > :not(caption) > * > * {
 nav .nav-link:hover{
     color: #dbdc1f !important;
 }
+.content img{
+    width: 100% !important;
+    border-radius: 15px;
+}
 /* Footer */
 .footer{
     flex-shrink: 0 !important;
