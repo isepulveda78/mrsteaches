@@ -9,7 +9,7 @@ const router = useRouter()
 
  const handleSubmit = (e) => {
     e.preventDefault()
-    router.push(`/games/search?term=${term}`)
+    router.push(`/lessons/search?term=${term}`)
     setTerm('')
  }
   return (
