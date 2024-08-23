@@ -4,7 +4,6 @@ import Layout from "@/components/Layout"
 import { getCourses } from '@/utils/wp_courses'
 import DropdownFilter from "@/components/DropdownFilter"
 import { LESSONS_PER_PAGE } from "@/config"
-import path from 'path'
 import Pagination from "@/components/Pagination"
 
 const Lessons = ({ lessons, numPages, currentPage }) => {

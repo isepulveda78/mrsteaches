@@ -119,6 +119,9 @@ nav .nav-link:hover{
     width: 100% !important;
     border-radius: 15px;
 }
+.pricing-list{
+    list-style: none !important;
+}
 /* Footer */
 .footer{
     flex-shrink: 0 !important;

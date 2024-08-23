@@ -2,7 +2,6 @@ import Stripe from "stripe"
 import User from "@/models/User"
 import db from "@/utils/database"
 import { getToken } from "next-auth/jwt"
-import { ObjectId } from "mongoose"
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 

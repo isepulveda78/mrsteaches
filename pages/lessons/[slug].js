@@ -22,11 +22,11 @@ const Course = ( {course} ) => {
      },[session])
 
     const getUserSubscriptionStatus = async () => {
-        console.log(subscription)
+       
         try {
            const { data } = await axios.get(`/api/subscribe/access`)
            if(data.user){
-                setSubscriptions(data.updateUser)
+                setSubscriptions(data.user.subscription_status)
            } else {
               toast.error('Not authorized!')
            }  

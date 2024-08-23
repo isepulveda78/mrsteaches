@@ -1,13 +1,32 @@
 import { useSession } from "next-auth/react"
 import Link from "next/link"
 import { FaRegCheckCircle } from "react-icons/fa"
-
+import { useState, useEffect } from 'react'
+import { toast } from "react-toastify"
+import axios from "axios"
 const PriceCard = ({ price, handleSubscription, userSubscriptions }) => {
 
-    const { status, data: session } = useSession()
+  const { data: session, update } = useSession()
+  const [ subscription, setSubscriptions ] = useState('')
 
-    const buttonText = () => {
-      return session && session?.user ? "Buy the plan" : "Sign up"
+    useEffect(() => {
+        if(session){
+         getUserSubscriptionStatus()
+        }
+     },[session])
+
+    const getUserSubscriptionStatus = async () => {
+       
+        try {
+           const { data } = await axios.get(`/api/subscribe/access`)
+           if(data.user){
+                setSubscriptions(data.user.subscription_status)
+           } else {
+              toast.error('Not authorized!')
+           }  
+        } catch (error) {
+            toast.error(error)
+        }
     }
 
     return (
@@ -36,14 +55,23 @@ const PriceCard = ({ price, handleSubscription, userSubscriptions }) => {
                       All Games
                   </li>
               </ul>
-              <button
-              onClick={(e) => handleSubscription(e, price)}
-              className='w-100 btn btn-lg bg-primary text-white mt-3'
-            >
-              {userSubscriptions && userSubscriptions.includes(price.id)
-                ? "Access plan"
-                : buttonText()}
-            </button>
+
+            <div className="d-grid mt-2">
+              { subscription === 'active' ? 
+                    ( <Link
+                      href="/lessons"
+                      className="btn btn-danger btn-lg text-white">
+                      Have fun teaching!
+                      </Link> 
+                    )
+                    :
+                    ( <button 
+                      onClick={(e) => handleSubscription(e, price)}
+                      className="btn btn-primary btn-lg text-white"
+                      >Subscribe</button> 
+                    )
+                }
+             </div>
           </div>
       </div>
   </div>
